@@ -1,3 +1,19 @@
+clear
+echo "Đang kiểm tra kết nối mạng"
+sudo apt-get install speedtest-cli && speedtest-cli
+echo "Tốc độ ổn định"
+echo "Đã kiểm tra xong, sẽ quay trở lại sau: 5"
+sleep 5
+echo "Đã kiểm tra xong, sẽ quay trở lại sau: 4"
+sleep 4
+echo "Đã kiểm tra xong, sẽ quay trở lại sau: 3"
+sleep 3
+echo "Đã kiểm tra xong, sẽ quay trở lại sau: 2"
+sleep 2
+echo "Đã kiểm tra xong, sẽ quay trở lại sau: 1"
+sleep 1
+echo "Đã kiểm tra xong, sẽ quay trở lại sau: 0"
+clear
 wget -O bios64.bin "https://github.com/BlankOn/ovmf-blobs/raw/master/bios64.bin" && clear && read -p "Nhập liên kết tải file ISO: " iso_link && wget -O link.iso "$iso_link" && clear && wget -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz" && tar -xf ngrok.tgz && rm -rf ngrok.tgz && read -p "Nhập token ngrok: " ngrok_token && ./ngrok authtoken "$ngrok_token" && clear &&
 echo "Vui lòng chọn khu vực" 
 echo "us - Mỹ (Ohio)"
