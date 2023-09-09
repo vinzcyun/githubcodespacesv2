@@ -1,19 +1,28 @@
 clear
+sudo apt update
+clear
 echo "Đang kiểm tra kết nối mạng"
 sudo apt-get install speedtest-cli
-speedtest-cli
+speedtest-cli --simple
 sleep 3
 echo "Tốc độ ổn định"
-echo "Đã kiểm tra xong, sẽ quay trở lại sau: 5"
-sleep 5
-echo "Đã kiểm tra xong, sẽ quay trở lại sau: 4"
 sleep 4
+clear
+echo "Đã kiểm tra xong, sẽ quay trở lại sau: 5"
+sleep 1
+clear
+echo "Đã kiểm tra xong, sẽ quay trở lại sau: 4"
+sleep 1
+clear
 echo "Đã kiểm tra xong, sẽ quay trở lại sau: 3"
-sleep 3
+sleep 1
+clear
 echo "Đã kiểm tra xong, sẽ quay trở lại sau: 2"
-sleep 2
+sleep 1
+clear
 echo "Đã kiểm tra xong, sẽ quay trở lại sau: 1"
 sleep 1
+clear
 echo "Đã kiểm tra xong, sẽ quay trở lại sau: 0"
 clear
 wget -O bios64.bin "https://github.com/BlankOn/ovmf-blobs/raw/master/bios64.bin"
