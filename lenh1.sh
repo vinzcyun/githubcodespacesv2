@@ -1,4 +1,4 @@
-wget -O bios64.bin "https://github.com/BlankOn/ovmf-blobs/raw/master/bios64.bin" && clear && read -p "Nhập liên kết tải file ISO: " iso_link && wget -O win.iso "$iso_link" && clear && wget -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz" && tar -xf ngrok.tgz && rm -rf ngrok.tgz && read -p "Nhập token ngrok: " ngrok_token && ./ngrok authtoken "$ngrok_token" && clear &&
+wget -O bios64.bin "https://github.com/BlankOn/ovmf-blobs/raw/master/bios64.bin" && clear && read -p "Nhập liên kết tải file ISO: " iso_link && wget -O win.iso "$iso_link" && wget -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz" && tar -xf ngrok.tgz && rm -rf ngrok.tgz && read -p "Nhập token ngrok: " ngrok_token && ./ngrok authtoken "$ngrok_token" && clear &&
 echo "Vui lòng chọn khu vực" 
 echo "us - Mỹ (Ohio)"
 echo "eu - Châu Âu (Frankfurt)"
