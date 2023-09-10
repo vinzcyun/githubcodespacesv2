@@ -78,14 +78,16 @@ clear
 echo "Đã tạo VPS thành công!"
 echo "Địa chỉ IP của bạn là: "
 curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
+echo " "
+echo " "
 echo "VPS sẽ hoạt động được 50h"
-echo "--------------------------------------"
-echo "Lệnh được viết bởi VinZ"
-echo "--------------------------------------"
+echo "________________________________________"
+echo "|        Lệnh được viết bởi VinZ.      |"
+echo "|______________________________________|"
 echo "Hoạt động trên VPS: "
 sudo qemu-system-x86_64 -m 12G -cpu host -boot order=c -drive file=link.iso,media=cdrom -drive file=win.img,format=raw -device usb-ehci,id=usb,bus=pci.0,addr=0x4 -device usb-tablet -vnc :0 -smp cores=4 -device rtl8139,netdev=n0 -netdev user,id=n0 -vga qxl -accel kvm -bios bios64.bin
 clear
-echo "-------------- Lỗi --------------"
+echo "-------------- Lỗi ----------------"
 echo "Ôi không!"
 echo "VPS đã dừng hoạt động "
 echo "Xin lỗi vì điều này "
