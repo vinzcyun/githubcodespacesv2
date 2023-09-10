@@ -60,8 +60,9 @@ sleep 2
 echo "Đang gán lệnh"
 sleep 5
 clear
-echo "Đã tạo VPS thành công"
-echo "Vui lòng lên ngrok để lấy địa chỉ IP"
+echo "Đã tạo VPS thành công!"
+echo "Địa chỉ IP của bạn là"
+curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
 echo "VPS sẽ hoạt động được 50h"
 echo "Khu vực ở dưới dành cho việc ghi lại hoạt động trên VPS"
 echo "--------------------------------------"
