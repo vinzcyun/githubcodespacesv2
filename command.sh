@@ -25,15 +25,20 @@ sleep 1
 clear
 echo "Đã kiểm tra xong, sẽ quay trở lại sau: 0"
 clear
+echo "Đang tải Bios TianoCore"
+sleep 3
 wget -O bios64.bin "https://github.com/BlankOn/ovmf-blobs/raw/master/bios64.bin"
 clear
 read -p "Nhập liên kết tải file ISO: " iso_link && wget -O link.iso "$iso_link"
 clear
+echo "Đang tải ngrok cho Linux"
+sleep 3
 wget -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz" && tar -xf ngrok.tgz && rm -rf ngrok.tgz
+clear
 read -p "Nhập token ngrok: " ngrok_token && ./ngrok authtoken "$ngrok_token"
 clear
 echo "Vui lòng chọn khu vực" 
-echo "us - Mỹ (Ohio)"
+echo "us - Hoa Kỳ (Ohio)"
 echo "eu - Châu Âu (Frankfurt)"
 echo "ap - Đông Nam Á (Singapore)"
 echo "au - Úc (Sydney)"
@@ -47,9 +52,24 @@ sudo apt update
 sudo apt install qemu-kvm -y
 read -p "Nhập dung lượng ổ đĩa: " disk_size
 qemu-img create -f raw win.img "$disk_size"
+sleep 1
+echo "Đang tạo ổ đĩa"
+sleep 4
+echo "Thành công!"
+sleep 2
+echo "Đang gán lệnh"
+sleep 5
 clear
-sudo qemu-system-x86_64 -m 12G -cpu host -boot order=c -drive file=link.iso,media=cdrom -drive file=win.img,format=raw -device usb-ehci,id=usb,bus=pci.0,addr=0x4 -device usb-tablet -vnc :0 -smp cores=4 -device rtl8139,netdev=n0 -netdev user,id=n0 -vga qxl -accel kvm -bios bios64.bin && clear &&
+echo "Đã tạo VPS thành công"
+echo "Vui lòng lên ngrok để lấy địa chỉ IP"
+echo "VPS sẽ hoạt động được 50h"
+echo "Khu vực ở dưới dành cho việc ghi lại hoạt động trên VPS"
+echo "--------------------------------------"
+sudo qemu-system-x86_64 -m 12G -cpu host -boot order=c -drive file=link.iso,media=cdrom -drive file=win.img,format=raw -device usb-ehci,id=usb,bus=pci.0,addr=0x4 -device usb-tablet -vnc :0 -smp cores=4 -device rtl8139,netdev=n0 -netdev user,id=n0 -vga qxl -accel kvm -bios bios64.bin
+clear
+echo "--------------Thông báo--------------"
 echo "Ôi không!"
 echo "VPS đã dừng hoạt động "
 echo "Xin lỗi vì điều này "
 echo "-----------------------------------"
+echo "Bạn có thể khởi động lại VPS khi nhập lệnh"
