@@ -1,16 +1,19 @@
-echo "Toàn bộ lệnh thuộc quyền sở hữu của VinZ"
-sleep 2
-echo "Không được ăn cắp đoạn lệnh này"
-echo "VinZ"
-sleep 4
+clear
+echo "______________________________________________"
+echo "|               Powered by VinZ.              |"
+echo "|    Toàn bộ lệnh thuộc quyền sở hữu của VinZ |"
+echo "|         Không được ăn cắp đoạn lệnh này.    |"
+echo "|                Thân ái! VinZ                |"
+echo "|_____________________________________________|"
+sleep 6
 clear
 echo "Đang update hệ thống"
 sleep 3
 clear
 sudo apt update
+sudo apt-get install speedtest-cli
 clear
 echo "Đang kiểm tra kết nối mạng"
-sudo apt-get install speedtest-cli
 speedtest-cli --simple
 sleep 3
 echo "Tốc độ ổn định"
@@ -41,7 +44,10 @@ read -p "Nhập liên kết tải file ISO: " iso_link && wget -O link.iso "$iso
 clear
 echo "Đang tải ngrok cho Linux"
 sleep 3
-wget -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz" && tar -xf ngrok.tgz && rm -rf ngrok.tgz
+wget -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
+clear
+tar -xf ngrok.tgz
+rm -rf ngrok.tgz
 clear
 read -p "Nhập token ngrok: " ngrok_token && ./ngrok authtoken "$ngrok_token"
 clear
@@ -58,6 +64,7 @@ read -p "Nhập khu vực: " khuvuc
 clear
 sudo apt update
 sudo apt install qemu-kvm -y
+clear
 read -p "Nhập dung lượng ổ đĩa: " disk_size
 qemu-img create -f raw win.img "$disk_size"
 sleep 1
@@ -72,19 +79,18 @@ echo "Đã tạo VPS thành công!"
 echo "Địa chỉ IP của bạn là: "
 curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
 echo "VPS sẽ hoạt động được 50h"
-echo "Khu vực ở dưới dành cho việc ghi lại hoạt động trên VPS"
 echo "--------------------------------------"
 echo "Lệnh được viết bởi VinZ"
 echo "--------------------------------------"
-echo "Hoạt động: "
+echo "Hoạt động trên VPS: "
 sudo qemu-system-x86_64 -m 12G -cpu host -boot order=c -drive file=link.iso,media=cdrom -drive file=win.img,format=raw -device usb-ehci,id=usb,bus=pci.0,addr=0x4 -device usb-tablet -vnc :0 -smp cores=4 -device rtl8139,netdev=n0 -netdev user,id=n0 -vga qxl -accel kvm -bios bios64.bin
 clear
-echo "--------------Thông báo--------------"
+echo "-------------- Lỗi --------------"
 echo "Ôi không!"
 echo "VPS đã dừng hoạt động "
 echo "Xin lỗi vì điều này "
 echo "-----------------------------------"
-echo "Bạn có thể khởi động lại VPS khi nhập lệnh"
+echo "Bạn có thể khởi động lại VPS khi nhập lại lệnh"
 echo "--------------------------------------"
 echo "Lệnh được viết bởi VinZ"
-echo "--------------------------------------"
+echo "github.com/VinDaiDe"
