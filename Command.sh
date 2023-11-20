@@ -1,4 +1,5 @@
 clear
+clear
 echo "______________________________________________"
 echo "|               Powered by VinZ.              |"
 echo "|    Toàn bộ lệnh thuộc quyền sở hữu của VinZ |"
