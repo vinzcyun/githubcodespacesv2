@@ -34,7 +34,7 @@ Bạn có thể khởi động lại VPS bằng cách [Truy cập vào đây](ht
 
 ### Đoạn lệnh để khởi động
 
-Truy cập vào Teminal của Codespace và dán đoạn lệnh này vào
+Truy cập vào Terminal của Codespace và dán đoạn lệnh này vào
 
 
 ```
