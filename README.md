@@ -34,6 +34,9 @@ Bạn có thể khởi động lại VPS bằng cách [Truy cập vào đây](ht
 
 ### Đoạn lệnh để khởi động
 
+Truy cập vào Teminal của Codespace và dán đoạn lệnh này vào
+
+
 ```
 sudo su
 wget -O Command2.sh https://raw.githubusercontent.com/VinDaiDe/githubcodespacesv2/main/Command2.sh
