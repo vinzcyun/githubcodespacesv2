@@ -3,7 +3,7 @@
 
 ## Giới thiệu
 
-GitHub Codespaces là một dịch vụ của GitHub cho phép bạn phát triển trực tuyến trên môi trường phát triển được tạo động. Điều này giúp giảm tải công việc cài đặt môi trường phát triển trên máy cục bộ và mang lại trải nghiệm phát triển mạnh mẽ và linh hoạt.
+GitHub Codespaces là một dịch vụ của GitHub cho phép bạn phát triển trực tuyến trên môi trường phát triển được tạo tự động. Điều này giúp giảm tải công việc cài đặt môi trường phát triển trên máy cục bộ và mang lại trải nghiệm phát triển mạnh mẽ và linh hoạt.
 
 ## Cài đặt
 
