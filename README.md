@@ -1,4 +1,4 @@
-11.20 20:47
+
 # Tạo VPS bằng Github Codespace
 
 ## Giới thiệu
@@ -25,6 +25,24 @@ wget -O Command.sh https://raw.githubusercontent.com/VinDaiDe/githubcodespacesv2
 chmod +x Command.sh
 ./Command.sh
 ```
+
+## Cách khởi động lại VPS khi Codespaces dừng hoạt động
+
+### Cách khởi động
+
+Bạn có thể khởi động lại VPS bằng cách [Truy cập vào đây](https://github.com/codespaces) Chọn repo mà bạn đã tạo VPS và ấn vào Open in => Open in browser
+
+### Đoạn lệnh để khởi động
+
+```
+sudo su
+wget -O Command2.sh https://raw.githubusercontent.com/VinDaiDe/githubcodespacesv2/main/Command2.sh
+chmod +x Command2.sh
+./Command2.sh
+```
+Sau đó chờ khoảng 30s để hệ thống chạy
+
+Sau khoảng thời gian đó bạn có thể truy cập vào VNC để dùng VPS
 
 ## Tính năng
 
