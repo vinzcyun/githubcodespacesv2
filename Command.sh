@@ -42,23 +42,15 @@ echo "Thành công"
 sleep 1
 echo "Đang chạy..."
 echo "Ok"
-clear
-echo "______________________________________________"
-echo "|    Toàn bộ lệnh thuộc quyền sở hữu của VinZ |"
-echo "|         Không được ăn cắp đoạn lệnh này.    |"
-echo "|                 Thân ái!                    |"
-echo "|_____________________________________________|"
 sleep 6
-clear
 echo "Đang update hệ thống"
-sleep 3
+sleep 1
 clear
 sudo apt update
 sudo apt-get install speedtest-cli
 clear
-echo "Đang kiểm tra kết nối mạng"
-speedtest-cli --simple
-sleep 4
+echo "Đang kiểm tra thông tin"
+sleep 1
 clear
 echo "Đã kiểm tra xong, sẽ quay trở lại sau: 5"
 sleep 1
@@ -78,13 +70,13 @@ clear
 echo "Đã kiểm tra xong, sẽ quay trở lại sau: 0"
 clear
 echo "Đang tải Bios TianoCore"
-sleep 3
+sleep 1
 wget -O bios64.bin "https://github.com/BlankOn/ovmf-blobs/raw/master/bios64.bin"
 clear
 read -p "Nhập liên kết tải file ISO: " iso_link && wget -O link.iso "$iso_link"
 clear
 echo "Đang tải ngrok cho Linux"
-sleep 3
+sleep 1
 wget -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
 clear
 tar -xf ngrok.tgz
@@ -110,16 +102,19 @@ read -p "Nhập dung lượng ổ đĩa: " disk_size
 qemu-img create -f raw win.img "$disk_size"
 sleep 1
 echo "Đang tạo ổ đĩa"
-sleep 4
+sleep 2
 echo "Thành công!"
 sleep 2
 echo "Đang gán lệnh"
-sleep 5
+sleep 2
 clear
 echo "Đã tạo VPS thành công!"
 echo "Địa chỉ IP của bạn là: "
 curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
 echo " "
+echo " "
+echo "Đang kiểm tra kết nối mạng"
+speedtest-cli --simple
 echo " "
 echo "VPS sẽ hoạt động được 50h"
 echo "________________________________________"
