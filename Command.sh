@@ -44,10 +44,9 @@ echo "Đang chạy..."
 echo "Ok"
 clear
 echo "______________________________________________"
-echo "|                                             |"
 echo "|    Toàn bộ lệnh thuộc quyền sở hữu của VinZ |"
 echo "|         Không được ăn cắp đoạn lệnh này.    |"
-echo "|                Thân ái! VinZ                |"
+echo "|                 Thân ái!                    |"
 echo "|_____________________________________________|"
 sleep 6
 clear
