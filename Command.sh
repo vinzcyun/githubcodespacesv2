@@ -97,7 +97,7 @@ read -p "Nhập khu vực: " khuvuc
 clear
 sudo apt update
 sudo apt install qemu-kvm -y
-sudo apt-get install speedtest-cli
+sudo apt install speedtest-cli
 clear
 read -p "Nhập dung lượng ổ đĩa: " disk_size
 qemu-img create -f raw win.img "$disk_size"
@@ -115,7 +115,7 @@ curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*publ
 echo " "
 echo " "
 echo "Đang kiểm tra kết nối mạng"
-speedtest-cli --simple
+speedtest-cli
 echo " "
 echo "VPS sẽ hoạt động được 50h"
 echo "________________________________________"
