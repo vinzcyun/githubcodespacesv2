@@ -1,4 +1,5 @@
 echo "Đang tải lệnh"
+sleep 3
 clear
 echo "=>"
 echo "1%"
@@ -43,7 +44,7 @@ echo "Đang chạy..."
 echo "Ok"
 clear
 echo "______________________________________________"
-echo "|               Powered by VinZ.              |"
+echo "|                                           |"
 echo "|    Toàn bộ lệnh thuộc quyền sở hữu của VinZ |"
 echo "|         Không được ăn cắp đoạn lệnh này.    |"
 echo "|                Thân ái! VinZ                |"
