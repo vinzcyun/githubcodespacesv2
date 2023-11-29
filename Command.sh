@@ -97,6 +97,7 @@ read -p "Nhập khu vực: " khuvuc
 clear
 sudo apt update
 sudo apt install qemu-kvm -y
+sudo apt-get install speedtest-cli
 clear
 read -p "Nhập dung lượng ổ đĩa: " disk_size
 qemu-img create -f raw win.img "$disk_size"
