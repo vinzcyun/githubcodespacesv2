@@ -1,4 +1,8 @@
-clear
+echo "Đang tải lệnh"
+sleep 2
+echo "Thành công"
+sleep 1
+echo "Đang chạy..."
 clear
 echo "______________________________________________"
 echo "|               Powered by VinZ.              |"
@@ -16,8 +20,6 @@ sudo apt-get install speedtest-cli
 clear
 echo "Đang kiểm tra kết nối mạng"
 speedtest-cli --simple
-sleep 3
-echo "Tốc độ ổn định"
 sleep 4
 clear
 echo "Đã kiểm tra xong, sẽ quay trở lại sau: 5"
