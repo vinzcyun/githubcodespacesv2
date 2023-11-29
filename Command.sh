@@ -1,8 +1,46 @@
 echo "Đang tải lệnh"
+clear
+echo "=>"
+echo "1%"
+clear
+echo "======>"
+echo "25%"
+sleep 2
+clear
+echo "===========>"
+echo "34%"
+clear
+echo "=====================>"
+echo "66%"
+sleep 3
+clear
+echo "=======================>"
+echo "73%"
+clear
+echo "==================================>"
+echo "95%"
+clear
+echo "===================================>"
+echo "97%"
+clear
+echo "===================================>"
+echo "97%"
+clear
+echo "===================================>"
+echo "97%"
+sleep 5
+clear
+echo "====================================>"
+echo "99%"
+sleep 3
+clear
+echo "======================================>"
+echo "100%"
 sleep 2
 echo "Thành công"
 sleep 1
 echo "Đang chạy..."
+echo "Ok"
 clear
 echo "______________________________________________"
 echo "|               Powered by VinZ.              |"
