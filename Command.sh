@@ -1,73 +1,12 @@
 echo "Đang tải lệnh"
-sleep 3
-clear
-echo "=>"
-echo "1%"
-clear
-echo "======>"
-echo "25%"
 sleep 2
-clear
-echo "===========>"
-echo "34%"
-clear
-echo "=====================>"
-echo "66%"
-sleep 3
-clear
-echo "=======================>"
-echo "73%"
-clear
-echo "==================================>"
-echo "95%"
-clear
-echo "===================================>"
-echo "97%"
-clear
-echo "===================================>"
-echo "97%"
-clear
-echo "===================================>"
-echo "97%"
-sleep 5
-clear
-echo "====================================>"
-echo "99%"
-sleep 3
-clear
-echo "======================================>"
-echo "100%"
-sleep 2
-echo "Thành công"
-sleep 1
-echo "Đang chạy..."
-echo "Ok"
-sleep 6
 echo "Đang update hệ thống"
 sleep 1
 clear
 sudo apt update
+echo "Đang tải Speedtest cho Linux"
 sudo apt-get install speedtest-cli
-clear
-echo "Đang kiểm tra thông tin"
-sleep 1
-clear
-echo "Đã kiểm tra xong, sẽ quay trở lại sau: 5"
-sleep 1
-clear
-echo "Đã kiểm tra xong, sẽ quay trở lại sau: 4"
-sleep 1
-clear
-echo "Đã kiểm tra xong, sẽ quay trở lại sau: 3"
-sleep 1
-clear
-echo "Đã kiểm tra xong, sẽ quay trở lại sau: 2"
-sleep 1
-clear
-echo "Đã kiểm tra xong, sẽ quay trở lại sau: 1"
-sleep 1
-clear
-echo "Đã kiểm tra xong, sẽ quay trở lại sau: 0"
+echo "Thành công!"
 clear
 echo "Đang tải Bios TianoCore"
 sleep 1
@@ -75,14 +14,15 @@ wget -O bios64.bin "https://github.com/BlankOn/ovmf-blobs/raw/master/bios64.bin"
 clear
 read -p "Nhập liên kết tải file ISO: " iso_link && wget -O link.iso "$iso_link"
 clear
-echo "Đang tải ngrok cho Linux"
+echo "Đang tải Ngrok cho Linux"
 sleep 1
 wget -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
 clear
+echo "Giải nén và cài đặt"
 tar -xf ngrok.tgz
 rm -rf ngrok.tgz
 clear
-read -p "Nhập token ngrok: " ngrok_token && ./ngrok authtoken "$ngrok_token"
+read -p "Nhập token Ngrok: " ngrok_token && ./ngrok authtoken "$ngrok_token"
 clear
 echo "Vui lòng chọn khu vực" 
 echo "us - Hoa Kỳ (Ohio)"
@@ -102,12 +42,9 @@ clear
 read -p "Nhập dung lượng ổ đĩa: " disk_size
 qemu-img create -f raw win.img "$disk_size"
 sleep 1
-echo "Đang tạo ổ đĩa"
-sleep 2
-echo "Thành công!"
-sleep 2
+echo "Đã tạo ổ đĩa"
 echo "Đang gán lệnh"
-sleep 2
+sleep 1
 clear
 echo "Đã tạo VPS thành công!"
 echo "Địa chỉ IP của bạn là: "
