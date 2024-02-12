@@ -63,8 +63,5 @@ Một số lỗi có thể phát sinh trong quá trình cài đặt như: file i
 
 Lạm dụng có thể khiến tài khoản bị gắn cờ dẫn đến khoá tài khoản.
 
-## Có thể ủng hộ cho tớ một cốc cafe chứ🥺🥺
-
-MoMo: 0352976450
 
 
