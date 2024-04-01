@@ -21,7 +21,7 @@ GitHub Codespaces là một dịch vụ của GitHub cho phép bạn phát tri�
 
 ```
 sudo su
-wget -O Command.sh https://raw.githubusercontent.com/VinDaiDe/githubcodespacesv2/main/Command.sh
+wget -O Command.sh https://raw.githubusercontent.com/vinzcyun/githubcodespacesv2/main/Command.sh
 chmod +x Command.sh
 ./Command.sh
 ```
@@ -39,7 +39,7 @@ Truy cập vào Terminal của Codespace và dán đoạn lệnh này vào
 
 ```
 sudo su
-wget -O Command2.sh https://raw.githubusercontent.com/VinDaiDe/githubcodespacesv2/main/Command2.sh
+wget -O Command2.sh https://raw.githubusercontent.com/vinzcyun/githubcodespacesv2/main/Command2.sh
 chmod +x Command2.sh
 ./Command2.sh
 ```
