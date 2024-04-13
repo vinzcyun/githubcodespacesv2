@@ -26,9 +26,9 @@ GitHub Codespaces là một dịch vụ của GitHub cho phép bạn phát tri�
 
 ```
 sudo su
-wget -O Command.sh https://raw.githubusercontent.com/vinzcyun/githubcodespacesv2/main/Command.sh
-chmod +x Command.sh
-./Command.sh
+wget -O install.sh https://raw.githubusercontent.com/vinzcyun/githubcodespacesv2/main/install.sh
+chmod +x install.sh
+./install.sh
 ```
 
 ## Cách khởi động lại VPS khi Codespaces dừng hoạt động
@@ -44,9 +44,9 @@ Truy cập vào Terminal của Codespace và dán đoạn lệnh này vào
 
 ```
 sudo su
-wget -O Command2.sh https://raw.githubusercontent.com/vinzcyun/githubcodespacesv2/main/Command2.sh
-chmod +x Command2.sh
-./Command2.sh
+wget -O restart.sh https://raw.githubusercontent.com/vinzcyun/githubcodespacesv2/main/restart.sh
+chmod +x restart.sh
+./restart.sh
 ```
 Sau đó chờ khoảng 30s để hệ thống chạy
 
