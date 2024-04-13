@@ -24,10 +24,12 @@ GitHub Codespaces is a service by GitHub that allows you to develop online in an
 
 ## Setup through Terminal
 
-```sudo su
+```
+sudo su
 wget -O Command.sh https://raw.githubusercontent.com/vinzcyun/githubcodespacesv2/main/Command.sh
 chmod +x Command.sh
-./Command.sh```
+./Command.sh
+```
 
 
 ## How to Restart VPS when Codespaces Stops Working
@@ -40,10 +42,12 @@ You can restart the VPS by clicking here Select the repo where you have created 
 
 Go to the Terminal of Codespace and paste this command
 
-```sudo su
+```
+sudo su
 wget -O Command2.sh https://raw.githubusercontent.com/vinzcyun/githubcodespacesv2/main/Command2.sh
 chmod +x Command2.sh
-./Command2.sh```
+./Command2.sh
+```
 
 
 Then wait about 30 seconds for the system to run.
