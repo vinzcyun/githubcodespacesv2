@@ -26,9 +26,9 @@ GitHub Codespaces is a service by GitHub that allows you to develop online in an
 
 ```
 sudo su
-wget -O Command.sh https://raw.githubusercontent.com/vinzcyun/githubcodespacesv2/main/Command.sh
-chmod +x Command.sh
-./Command.sh
+wget -O install.sh https://raw.githubusercontent.com/vinzcyun/githubcodespacesv2/main/install.sh
+chmod +x install.sh
+./install.sh
 ```
 
 
@@ -44,9 +44,9 @@ Go to the Terminal of Codespace and paste this command
 
 ```
 sudo su
-wget -O Command2.sh https://raw.githubusercontent.com/vinzcyun/githubcodespacesv2/main/Command2.sh
-chmod +x Command2.sh
-./Command2.sh
+wget -O restart.sh https://raw.githubusercontent.com/vinzcyun/githubcodespacesv2/main/restart.sh
+chmod +x restart.sh
+./restart.sh
 ```
 
 
