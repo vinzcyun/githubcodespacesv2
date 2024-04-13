@@ -1,3 +1,5 @@
+echo " "
+sleep 4
 echo "Đang tải lệnh"
 sleep 2
 echo "Đang update hệ thống"
