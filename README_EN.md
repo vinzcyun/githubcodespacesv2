@@ -1,3 +1,7 @@
+<div align="left">
+<a href="/README_EN.md">English</a> &nbsp;|&nbsp;
+<a href="/README.md">Tiếng Việt</a>
+</div>
 
 
 # Creating a VPS with Github Codespace
