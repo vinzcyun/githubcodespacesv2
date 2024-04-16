@@ -12,17 +12,17 @@ GitHub Codespaces is a service by GitHub that allows you to develop online in an
 
 ## • Setup
 
-1. Access GitHub Codespaces in your web browser.
+1. Access [GitHub Codespaces](https://github.com/features/codespaces) in your web browser.
 
 2. Create an account to use.
 
-3. Make a new repo on the official GitHub page.
+3. Make a new repo on the official [GitHub](https://github.com/) page.
 
 4. Input Docker VM configurations to create a Codespace.
 
 5. Codespace will be created on the repo you are working on.
 
-## •Setup through Terminal
+## • Setup through Terminal
 
 ```
 sudo su
@@ -36,7 +36,7 @@ chmod +x install.sh
 
 ### • How to Start
 
-You can restart the VPS by clicking here Select the repo where you have created the VPS and click Open in => Open in browser.
+You can restart the VPS by [clicking here](https://github.com/codespaces)  Select the repo where you have created the VPS and click Open in => Open in browser.
 
 ### • Command to Start
 
