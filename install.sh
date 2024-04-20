@@ -73,15 +73,17 @@ echo "github.com/vinzcyun"
 echo " "
 echo " "
 clear
-echo "Đang chạy lại"
 #!/bin/bash
 
 while true; do
-    clear && sleep 1 && echo "Đang cố gắng kết nối lại"
+    echo "Đang cố gắng kết nối lại"
     sleep 1
     echo "Đang xử lý..."
-    sleep 2
+    sleep 1
     echo "Đã kết nối"
     echo "Địa chỉ IP truy cập của bạn sẽ vẫn như cũ"
     sudo qemu-system-x86_64 -m 12G -cpu host -boot order=c -drive file=link.iso,media=cdrom -drive file=win.img,format=raw -device usb-ehci,id=usb,bus=pci.0,addr=0x4 -device usb-tablet -vnc :0 -smp cores=4 -device rtl8139,netdev=n0 -netdev user,id=n0 -vga qxl -accel kvm -bios bios64.bin
+    clear && sleep 1
+    echo "Lỗi không mong muốn"
+    sleep 2
 done
