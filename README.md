@@ -25,7 +25,7 @@ GitHub Codespaces là một dịch vụ của GitHub cho phép bạn phát tri�
 ## Cài đặt thông qua Terminal
 
 ```
-sudo su && git clone https://github.com/vinzcyun/githubcodespacesv2.git && cd githu codespacesv2 && bash install.sh
+sudo su && git clone https://github.com/vinzcyun/githubcodespacesv2.git && cd githubcodespacesv2 && bash install.sh
 ```
 
 ## Cách khởi động lại VPS khi Codespaces dừng hoạt động
