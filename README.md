@@ -42,7 +42,7 @@ Truy cập vào Terminal của Codespace và dán đoạn lệnh này vào
 sudo su && cd githubcodespacesv2 && restart.sh
 ```
 
-### *Hoặc
+#### *Hoặc
 
 ```
 sudo su
