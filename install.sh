@@ -77,7 +77,7 @@ echo "Đang chạy lại"
 #!/bin/bash
 
 while true; do
-    echo "Đang cố gắng kết nối lại"
+    clear && sleep 1 && echo "Đang cố gắng kết nối lại"
     sleep 1
     echo "Đang xử lý..."
     sleep 2
