@@ -1,4 +1,6 @@
 clear
+echo "Đang khởi động lại máy ảo"
+sleep 5
 echo "Đang tải ngrok cho Linux"
 sleep 3
 wget -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
@@ -50,16 +52,14 @@ clear
 #!/bin/bash
 
 while true; do
-    echo "Đang kiểm tra thông tin"
+    echo "Đang cố gắng kết nối lại"
     sleep 1
     echo "Đang xử lý..."
     sleep 2
     echo "Đã kết nối"
     echo "Địa chỉ IP truy cập của bạn sẽ vẫn như cũ"
     sudo qemu-system-x86_64 -m 12G -cpu host -boot order=c -drive file=link.iso,media=cdrom -drive file=win.img,format=raw -device usb-ehci,id=usb,bus=pci.0,addr=0x4 -device usb-tablet -vnc :0 -smp cores=4 -device rtl8139,netdev=n0 -netdev user,id=n0 -vga qxl -accel kvm -bios bios64.bin
-    clear && echo "Đang chạy lại"
-    echo "Thành công!"
-    sudo qemu-system-x86_64 -m 12G -cpu host -boot order=c -drive file=link.iso,media=cdrom -drive file=win.img,format=raw -device usb-ehci,id=usb,bus=pci.0,addr=0x4 -device usb-tablet -vnc :0 -smp cores=4 -device rtl8139,netdev=n0 -netdev user,id=n0 -vga qxl -accel kvm -bios bios64.bin
-    echo "Lỗi"
-    sleep 2 && clear
+    clear && sleep 2
+    echo "Lỗi không mong muốn"
+    sleep 2
 done
