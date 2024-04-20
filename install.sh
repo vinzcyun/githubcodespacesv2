@@ -69,7 +69,7 @@ echo "VPS đã dừng hoạt động "
 echo "Xin lỗi vì điều này "
 echo "-----------------------------------"
 echo "Lệnh được viết bởi VinZ"
-echo "github.com/VinDaiDe"
+echo "github.com/vinzcyun"
 echo " "
 echo " "
 clear
