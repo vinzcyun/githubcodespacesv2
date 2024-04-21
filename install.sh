@@ -5,19 +5,18 @@ echo "Đang tải lệnh"
 sleep 2
 echo "Đang update hệ thống, chờ khoảng 30 giây"
 sudo apt update -qq
-echo "Đang tải Speedtest cho Linux"
-sudo apt-get install speedtest-cli -qq
 echo "Thành công!"
+sleep 2
 clear
 echo "Đang tải Bios TianoCore"
 sleep 1
-wget -O bios64.bin "https://github.com/BlankOn/ovmf-blobs/raw/master/bios64.bin"
+wget -q -O bios64.bin "https://github.com/BlankOn/ovmf-blobs/raw/master/bios64.bin"
 clear
-read -p "Nhập liên kết tải file ISO: " iso_link && wget -O link.iso "$iso_link"
+read -p "Nhập liên kết tải file ISO: " iso_link && wget -q -O link.iso "$iso_link"
 clear
 echo "Đang tải Ngrok cho Linux"
 sleep 1
-wget -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
+wget -q -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
 clear
 echo "Giải nén và cài đặt"
 tar -xf ngrok.tgz
