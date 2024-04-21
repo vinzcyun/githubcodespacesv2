@@ -1,15 +1,13 @@
 #!/bin/bash
 
 clear
-echo "Đang tải lệnh"
-sleep 2
-echo "Đang update hệ thống, chờ khoảng 30 giây"
-sudo apt update -qq
-echo "Thành công!"
+echo "Đang chuẩn bị..."
 sleep 2
 clear
+echo "Đang update hệ thống, chờ khoảng 30 giây"
+sudo apt update -qq
+clear
 echo "Đang tải Bios TianoCore"
-sleep 1
 wget -q -O bios64.bin "https://github.com/BlankOn/ovmf-blobs/raw/master/bios64.bin"
 clear
 read -p "Nhập liên kết tải file ISO: " iso_link && wget -O link.iso "$iso_link"
@@ -18,7 +16,8 @@ echo "Đang tải Ngrok cho Linux"
 sleep 1
 wget -q -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
 clear
-echo "Giải nén và cài đặt"
+echo "Giải nén và cài đặt Ngrok"
+sleep 2
 tar -xf ngrok.tgz
 rm -rf ngrok.tgz
 clear
@@ -35,7 +34,6 @@ echo "in - Ấn Độ (Mumbai)"
 read -p "Nhập khu vực: " khuvuc
 ./ngrok tcp --region $khuvuc 5900 &>/dev/null &
 clear
-sudo apt update -qq
 sudo apt install qemu-kvm -y -qq
 sudo apt install speedtest-cli -qq
 clear
