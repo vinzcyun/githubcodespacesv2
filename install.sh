@@ -1,13 +1,12 @@
-echo " "
-sleep 4
+#!/bin/bash
+
+clear
 echo "Đang tải lệnh"
 sleep 2
-echo "Đang update hệ thống"
-sleep 1
-clear
-sudo apt update
+echo "Đang update hệ thống, chờ khoảng 30 giây"
+sudo apt update -qq
 echo "Đang tải Speedtest cho Linux"
-sudo apt-get install speedtest-cli
+sudo apt-get install speedtest-cli -qq
 echo "Thành công!"
 clear
 echo "Đang tải Bios TianoCore"
@@ -37,9 +36,9 @@ echo "in - Ấn Độ (Mumbai)"
 read -p "Nhập khu vực: " khuvuc
 ./ngrok tcp --region $khuvuc 5900 &>/dev/null &
 clear
-sudo apt update
-sudo apt install qemu-kvm -y
-sudo apt install speedtest-cli
+sudo apt update -qq
+sudo apt install qemu-kvm -y -qq
+sudo apt install speedtest-cli -qq
 clear
 read -p "Nhập dung lượng ổ đĩa: " disk_size
 qemu-img create -f raw win.img "$disk_size"
