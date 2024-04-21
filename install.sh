@@ -1,5 +1,6 @@
 #!/bin/bash
 
+clear
 echo "----------VPS Codespaces-----------"
 echo "Phiên bản: v2.20240421_debug"
 echo "Ngôn ngữ: Tiếng Việt"
