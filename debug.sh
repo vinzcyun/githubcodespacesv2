@@ -56,6 +56,7 @@ if [ "$lang_choice" == "1" ]; then
     echo "VPS operations: "
     sudo qemu-system-x86_64 -m 12G -cpu host -boot order=c -drive file=link.iso,media=cdrom -drive file=win.img,format=raw -device usb-ehci,id=usb,bus=pci.0,addr=0x4 -device usb-tablet -vnc :0 -smp cores=4 -device rtl8139,netdev=n0 -netdev user,id=n0 -vga qxl -accel kvm -bios bios64.bin
 elif [ "$lang_choice" == "2" ]; then
+    clear
     echo "Đang tải lệnh..."
     echo "Đang cập nhật hệ thống, vui lòng đợi khoảng 30 giây"
     sudo apt update -qq
@@ -65,19 +66,14 @@ elif [ "$lang_choice" == "2" ]; then
     echo "Đang tải Bios TianoCore"
     sleep 1
     wget -O bios64.bin "https://github.com/BlankOn/ovmf-blobs/raw/master/bios64.bin"
-    clear
     read -p "Nhập liên kết tải file ISO: " iso_link && wget -O link.iso "$iso_link"
-    clear
     echo "Đang tải Ngrok cho Linux"
     sleep 1
     wget -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
-    clear
     echo "Giải nén và cài đặt"
     tar -xf ngrok.tgz
     rm -rf ngrok.tgz
-    clear
     read -p "Nhập token Ngrok: " ngrok_token && ./ngrok authtoken "$ngrok_token"
-    clear
     echo "Vui lòng chọn khu vực" 
     echo "us - Hoa Kỳ (Ohio)"
     echo "eu - Châu Âu (Frankfurt)"
@@ -88,18 +84,13 @@ elif [ "$lang_choice" == "2" ]; then
     echo "in - Ấn Độ (Mumbai)"
     read -p "Nhập khu vực: " khuvuc
     ./ngrok tcp --region $khuvuc 5900 &>/dev/null &
-    clear
     sudo apt update -qq
     sudo apt install qemu-kvm -y -qq
     sudo apt install speedtest-cli -qq
-    clear
     read -p "Nhập dung lượng ổ đĩa: " disk_size
     qemu-img create -f raw win.img "$disk_size"
-    sleep 1
     echo "Đã tạo ổ đĩa"
     echo "Đang gán lệnh"
-    sleep 1
-    clear
     echo "Đã tạo VPS thành công!"
     echo "Địa chỉ IP của bạn là: "
     curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
@@ -113,4 +104,4 @@ elif [ "$lang_choice" == "2" ]; then
     echo "|        Lệnh được viết bởi VinZ.      |"
     echo "|______________________________________|"
     echo "Hoạt động trên VPS: "
-    sudo qemu-system-x86_64 -m 12G -cpu host -boot order=c -drive file=link.iso,media=cdrom -drive file=win.img,format=raw -device usb-ehci,id=usb,bus=pci.0,addr=0x4 -device usb-table
+    sudo qemu-system-x86_64 -m 12G
