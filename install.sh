@@ -12,7 +12,7 @@ echo "Đang tải Bios TianoCore"
 sleep 1
 wget -q -O bios64.bin "https://github.com/BlankOn/ovmf-blobs/raw/master/bios64.bin"
 clear
-read -p "Nhập liên kết tải file ISO: " iso_link && wget -q -O link.iso "$iso_link"
+read -p "Nhập liên kết tải file ISO: " iso_link && wget -O link.iso "$iso_link"
 clear
 echo "Đang tải Ngrok cho Linux"
 sleep 1
