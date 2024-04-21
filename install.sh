@@ -1,20 +1,28 @@
 #!/bin/bash
 
+echo "----------VPS Codespaces-----------"
+echo "Phiên bản: v2.20240421_debug"
+echo "Ngôn ngữ: Tiếng Việt"
+echo "Khu vực: Việt Nam"
+sleep 1
+echo "Tóm tắt cập nhật:"
+echo "Đã sửa lỗi không hiện IP khi tạo VPS, tối ưu thời gian tải, chỉnh sửa lại giao diện"
+sleep 5
 clear
 echo "Đang chuẩn bị..."
-sleep 2
+sleep 1
 clear
-echo "Đang update hệ thống, chờ khoảng 30 giây"
+echo "Đang update hệ thống, chờ khoảng 10 giây"
 sudo apt update -qq
 clear
 echo "Đang tải Bios TianoCore"
 wget -q -O bios64.bin "https://github.com/BlankOn/ovmf-blobs/raw/master/bios64.bin"
 clear
-read -p "Nhập liên kết tải file ISO: " iso_link && wget -O link.iso "$iso_link"
-clear
 echo "Đang tải Ngrok cho Linux"
 sleep 1
 wget -q -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
+clear
+read -p "Nhập liên kết tải file ISO: " iso_link && wget -O link.iso "$iso_link"
 clear
 echo "Giải nén và cài đặt Ngrok"
 sleep 2
@@ -47,12 +55,10 @@ clear
 echo "Đã tạo VPS thành công!"
 echo "Địa chỉ IP của bạn là: "
 curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
-echo " "
-echo " "
+echo "Vui lòng đăng nhập vào VNC để sử dụng"
 echo "Đang kiểm tra kết nối mạng"
-speedtest-cli
+speedtest-cli --simple
 echo " "
-echo "VPS sẽ hoạt động được 50h"
 echo "________________________________________"
 echo "|        Lệnh được viết bởi VinZ.      |"
 echo "|______________________________________|"
