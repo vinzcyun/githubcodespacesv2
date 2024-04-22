@@ -123,7 +123,7 @@ echo "in - Ấn Độ (Mumbai)"
 read -p "Nhập khu vực: " khuvuc
 ./ngrok tcp --region $khuvuc 5900 &>/dev/null &
 clear
-echo "Đang tải QEMU-KVM"
+echo "Đang tải và cài đặt QEMU-KVM"
 sudo apt install qemu-kvm -y -qq
 clear
 echo "Đang tải thêm công cụ mở rộng"
@@ -148,7 +148,7 @@ echo "|        Lệnh được viết bởi VinZ.      |"
 echo "|______________________________________|"
 echo "Hoạt động trên VPS: "
 sudo qemu-system-x86_64 -m 12G -cpu host -boot order=c -drive file=link.iso,media=cdrom -drive file=win.img,format=raw -device usb-ehci,id=usb,bus=pci.0,addr=0x4 -device usb-tablet -vnc :0 -smp cores=4 -device rtl8139,netdev=n0 -netdev user,id=n0 -vga qxl -accel kvm -bios bios64.bin
-sleep 5
+sleep 1
 clear
 echo "-------------- Lỗi ----------------"
 echo "Ôi không!"
@@ -166,13 +166,10 @@ clear
 
 while true; do
     echo "Đang cố gắng kết nối lại"
-    sleep 1
     echo "Đang xử lý..."
-    sleep 1
     echo "Đã kết nối"
     echo "Địa chỉ IP truy cập của bạn sẽ vẫn như cũ"
     sudo qemu-system-x86_64 -m 12G -cpu host -boot order=c -drive file=link.iso,media=cdrom -drive file=win.img,format=raw -device usb-ehci,id=usb,bus=pci.0,addr=0x4 -device usb-tablet -vnc :0 -smp cores=4 -device rtl8139,netdev=n0 -netdev user,id=n0 -vga qxl -accel kvm -bios bios64.bin
     clear && sleep 1
     echo "Lỗi không mong muốn"
-    sleep 2
 done
