@@ -10,18 +10,26 @@ echo "Tóm tắt cập nhật:"
 echo "Đã sửa lỗi không hiện IP khi tạo VPS, tối ưu thời gian tải, chỉnh sửa lại giao diện"
 sleep 5
 clear
+#!/bin/bash
+
 echo "Đang chuẩn bị..."
-min_percentage=0
-for ((i=0; i<=10; i++)); do
-    random_percentage=$((RANDOM % (101 - min_percentage) + min_percentage))
+current_percentage=0
+while [ $current_percentage -lt 100 ]; do
+    random_increment=$((RANDOM % (11)))
+    next_percentage=$((current_percentage + random_increment))
+    if [ $next_percentage -gt 100 ]; then
+        next_percentage=100
+    fi
     echo -ne "Đang tải: ["
-    for ((j=0; j<=i; j++)); do echo -n "="; done
-    for ((j=i; j<10; j++)); do echo -n " "; done
-    echo -ne "] $random_percentage%\r"
+    for ((j=0; j<=$next_percentage; j+=10)); do 
+        echo -n "="
+    done
+    for ((j=$next_percentage; j<100; j+=10)); do echo -n " "; done
+    echo -ne "] $next_percentage%\r"
+    current_percentage=$next_percentage
     sleep 0.2
-    ((min_percentage=random_percentage+1))
 done
-sleep 3
+echo -e "\nHoàn thành!"
 clear
 echo "Đang update hệ thống, chờ khoảng 10 giây"
 sudo apt update -qq
