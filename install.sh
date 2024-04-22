@@ -33,14 +33,76 @@ echo -e "\nHoàn thành!"
 clear
 echo "Đang update hệ thống, chờ khoảng 10 giây"
 sudo apt update -qq
+#!/bin/bash
+
+current_percentage=0
+while [ $current_percentage -lt 100 ]; do
+    random_increment=$((RANDOM % (11)))
+    next_percentage=$((current_percentage + random_increment))
+    if [ $next_percentage -gt 100 ]; then
+        next_percentage=100
+    fi
+    echo -ne "Đang tải: ["
+    for ((j=0; j<=$next_percentage; j+=10)); do 
+        echo -n "="
+    done
+    for ((j=$next_percentage; j<100; j+=10)); do echo -n " "; done
+    echo -ne "] $next_percentage%\r"
+    current_percentage=$next_percentage
+    sleep 0.2
+done
+echo -e "\nHoàn thành!"
+clear
 clear
 echo "Đang tải Bios TianoCore"
 wget -q -O bios64.bin "https://github.com/BlankOn/ovmf-blobs/raw/master/bios64.bin"
+#!/bin/bash
+
+current_percentage=0
+while [ $current_percentage -lt 100 ]; do
+    random_increment=$((RANDOM % (11)))
+    next_percentage=$((current_percentage + random_increment))
+    if [ $next_percentage -gt 100 ]; then
+        next_percentage=100
+    fi
+    echo -ne "Đang tải: ["
+    for ((j=0; j<=$next_percentage; j+=10)); do 
+        echo -n "="
+    done
+    for ((j=$next_percentage; j<100; j+=10)); do echo -n " "; done
+    echo -ne "] $next_percentage%\r"
+    current_percentage=$next_percentage
+    sleep 0.2
+done
+echo -e "\nHoàn thành!"
+clear
 clear
 echo "Đang tải Ngrok cho Linux"
 sleep 1
 wget -q -O ngrok.tgz "https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz"
+#!/bin/bash
+
+current_percentage=0
+while [ $current_percentage -lt 100 ]; do
+    random_increment=$((RANDOM % (11)))
+    next_percentage=$((current_percentage + random_increment))
+    if [ $next_percentage -gt 100 ]; then
+        next_percentage=100
+    fi
+    echo -ne "Đang tải: ["
+    for ((j=0; j<=$next_percentage; j+=10)); do 
+        echo -n "="
+    done
+    for ((j=$next_percentage; j<100; j+=10)); do echo -n " "; done
+    echo -ne "] $next_percentage%\r"
+    current_percentage=$next_percentage
+    sleep 0.2
+done
+echo -e "\nHoàn thành!"
 clear
+clear
+echo "*    Cảnh báo!    *"
+echo "Vui lòng không nhấn Enter hoặc nút Tiếp theo trong khi đang tải tệp tin vì sẽ khiến cho lệnh tiếp theo bị lỗi"
 read -p "Nhập liên kết tải file ISO: " iso_link && wget -O link.iso "$iso_link"
 clear
 echo "Giải nén và cài đặt Ngrok"
@@ -61,12 +123,15 @@ echo "in - Ấn Độ (Mumbai)"
 read -p "Nhập khu vực: " khuvuc
 ./ngrok tcp --region $khuvuc 5900 &>/dev/null &
 clear
+echo "Đang tải QEMU-KVM"
 sudo apt install qemu-kvm -y -qq
+clear
+echo "Đang tải thêm công cụ mở rộng"
 sudo apt install speedtest-cli -qq
 clear
 read -p "Nhập dung lượng ổ đĩa: " disk_size
+echo "Đang tạo ổ đĩa"
 qemu-img create -f raw win.img "$disk_size"
-sleep 1
 echo "Đã tạo ổ đĩa"
 echo "Đang gán lệnh"
 sleep 1
