@@ -2,7 +2,7 @@
 
 clear
 echo "----------VPS Codespaces-----------"
-echo "Phiên bản: v2.20240421_debug"
+echo "Phiên bản: v2.20240422_debug"
 echo "Ngôn ngữ: Tiếng Việt"
 echo "Khu vực: Việt Nam"
 sleep 1
@@ -11,7 +11,17 @@ echo "Đã sửa lỗi không hiện IP khi tạo VPS, tối ưu thời gian t�
 sleep 5
 clear
 echo "Đang chuẩn bị..."
-sleep 1
+min_percentage=0
+for ((i=0; i<=10; i++)); do
+    random_percentage=$((RANDOM % (101 - min_percentage) + min_percentage))
+    echo -ne "Đang tải: ["
+    for ((j=0; j<=i; j++)); do echo -n "="; done
+    for ((j=i; j<10; j++)); do echo -n " "; done
+    echo -ne "] $random_percentage%\r"
+    sleep 0.2
+    ((min_percentage=random_percentage+1))
+done
+sleep 3
 clear
 echo "Đang update hệ thống, chờ khoảng 10 giây"
 sudo apt update -qq
